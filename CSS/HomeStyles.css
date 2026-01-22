@@ -18,9 +18,9 @@ body {
     background-color: var(--main-color);
 }
 
-nav {
+/* nav {
     border-bottom: 1px solid var( --second-color);;
-}
+} */
 
 .container {
     max-width: 1280px;
@@ -89,6 +89,7 @@ nav {
 
     .nav-menu.active {
         top: 95px;
+        transition: 0.5s;
     }
 
    
