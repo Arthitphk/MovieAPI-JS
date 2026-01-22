@@ -2,7 +2,7 @@
     --text-color: #ffffff;
     --main-color: #222831;
     --second-color: #a0de59;
-    --title-size: 10rem;
+    --title-size: 5rem;
     --text-size: 16px
 }
 
@@ -18,9 +18,9 @@ body {
     background-color: var(--main-color);
 }
 
-/* nav {
+nav {
     border-bottom: 1px solid var( --second-color);;
-} */
+}
 
 .container {
     max-width: 1280px;
@@ -33,9 +33,66 @@ body {
     padding: 2rem;
 }
 
-.nav-item {
+.nav-menu {
     display: flex;
     gap: 20px;
     list-style: none;
     color: var(--text-color);
+    font-size: var(--text-size);
+}
+
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--second-color);
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+     opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        gap: 5px;
+        flex-direction: column;
+        background-color: var(--second-color);
+        width: 100%;
+        text-align: center;
+        transition: 0.5s;
+    }
+
+    .nav-menu.active {
+        top: 95px;
+    }
+
+   
+    
+
+    
 }
